@@ -35,7 +35,7 @@ $ npm install
 
 ```bash
 # development
-$ npm run start
+$ npm run startDDD
 
 # watch mode
 $ npm run start:dev
