@@ -1,4 +1,5 @@
 import { IsNotEmpty, IsString, Length, IsBoolean } from 'class-validator';
+import { PartialType } from '@nestjs/mapped-types';
 
 export class UpdateTaskDto {
   @IsString({ message: 'Custom STRING' })
@@ -9,3 +10,5 @@ export class UpdateTaskDto {
   @IsBoolean({ message: 'Custom BOOLEAN' })
   isActive: boolean;
 }
+
+export class PartialUpdateTaskDto extends PartialType(UpdateTaskDto) {}
