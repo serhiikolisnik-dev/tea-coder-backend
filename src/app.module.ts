@@ -1,10 +1,12 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { MovieModule } from './movie/movie.module';
+import { MovieModule } from './modules/movie/movie.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { getTypeOrmConfig } from './config/typeorm.config';
+import { ReviewModule } from './modules/review/review.module';
+import { ActorsModule } from './modules/actors/actors.module';
 
 @Module({
   imports: [
@@ -17,6 +19,8 @@ import { getTypeOrmConfig } from './config/typeorm.config';
       inject: [ConfigService],
     }),
     MovieModule,
+    ReviewModule,
+    ActorsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
